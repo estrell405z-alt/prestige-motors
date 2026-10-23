@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalle del vehículo | Prestige Motors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header>
+
+  <a href="index.html" class="logo"><img src="img/LogoMetalFondoA6AEB0.jpg" alt="Prestige Motors"></a>
+
+  <nav>
+
+    <a href="registro.html">Servicios</a>
+
+    <a href="#">Test Drive</a>
+
+    <a href="index.html">Prestige Motors</a>
+
+    <a href="#" class="btn-asesor">Contactar asesor</a>
+
+  </nav>
+
+</header>
+
+  <section class="titulo">
+    <div>
+      <h1 id="d-nombre">Cargando…</h1>
+      <p id="d-categoria"></p>
+    </div>
+    <a class="btn-detalle" href="index.html">Volver al catálogo</a>
+  </section>
+
+  <main class="detalle" id="detalle">
+    <div class="detalle-foto">
+      <img id="d-foto" src="" alt="">
+    </div>
+    <div class="detalle-info">
+      <span class="detalle-precio" id="d-precio"></span>
+      <p class="desc" id="d-desc"></p>
+      <dl class="ficha" id="d-ficha"></dl>
+      <a class="btn-detalle" href="#">Contactar asesor</a>
+    </div>
+  </main>
+
+<footer>
+
+    <a href="#" class="volver">
+
+      <span aria-hidden="true">↑</span>
+
+      Volver arriba
+
+    </a>
+
+
+
+    <div class="footer-cols">
+
+      <div>
+
+        <h5>Postventa</h5>
+
+        <a href="registro.html">Auto Spa</a>
+
+        <a href="registro.html">Boutique</a>
+
+        <a href="registro.html">Accesorios</a>
+
+        <a href="registro.html">Garantía</a>
+
+        <a href="registro.html">Servicios mecánicos</a>
+
+      </div>
+
+      <div>
+
+        <h5>Marcas asociadas</h5>
+
+        <a href="https://www.porsche.com/international/">Porsche</a>
+
+        <a href="https://www.chevrolet.com.pe/">Chevrolet</a>
+
+        <a href="https://www.audi.com/en">Audi</a>
+
+        <a href="https://www.mercedes-benz.com.pe/">Mercedes-benz</a>
+
+        <a href="https://www.mclaren.com/">Mclaren</a>
+
+        <a href="https://www.mitsubishi-motors.com.pe/">Mitsubishi</a>
+
+      </div>
+
+      <div>
+
+        <h5>Trabaja con nosotros</h5>
+
+        <a href="#">Empleos</a>
+
+        <a href="#">Sostenibilidad</a>
+
+        <a href="#">Logros empresariales</a>
+
+      </div>
+
+    </div>
+
+
+
+    <p class="copy">© 2026 Prestige Motors Latin America, Inc.</p>
+
+
+
+    <div class="footer-base">
+
+      <div class="legales">
+
+        <a href="#">Políticas y privacidad</a>
+
+        <a href="#">Libro de reclamaciones</a>
+
+        <a href="#">Preferencias de Cookies</a>
+
+      </div>
+
+      <div class="redes">
+
+        <a href="#" aria-label="Facebook">
+
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.4H7.6V14h2.7v8z"/></svg>
+
+        </a>
+
+        <a href="#" aria-label="Instagram">
+
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+
+        </a>
+
+        <a href="#" aria-label="YouTube">
+
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    // La página se rellena con el vehículo indicado en la URL: detalle.html?id=porsche-911
+    // Los datos vienen del backend: GET /api/autos/{slug}
+    const id = new URLSearchParams(location.search).get("id");
+    const $ = sel => document.querySelector(sel);
+
+    function mostrarMensaje(titulo, texto) {
+      document.title = titulo + " | Prestige Motors";
+      $("#d-nombre").textContent = titulo;
+      $("#detalle").innerHTML =
+        '<div class="detalle-info"><p class="desc">' + texto + '</p>' +
+        '<a class="btn-detalle" href="index.html">Ir al catálogo</a></div>';
+    }
+
+    function mostrarAuto(auto) {
+      document.title = auto.nombre + " | Prestige Motors";
+      $("#d-nombre").textContent = auto.nombre;
+      $("#d-categoria").textContent = auto.categoria || "";
+      $("#d-foto").src = auto.imagen;
+      $("#d-foto").alt = auto.nombre;
+      $("#d-desc").textContent = auto.descripcion || "";
+      $("#d-precio").textContent = auto.precio != null
+        ? "$" + Number(auto.precio).toLocaleString("en-US") + " USD"
+        : "Consultar precio";
+
+      // Solo se muestran los datos que el vehículo tiene
+      const filas = [
+        ["Año de fabricación", auto.anio],
+        ["Kilometraje", auto.kilometraje != null ? auto.kilometraje.toLocaleString("en-US") + " km" : null],
+        ["Color", auto.color],
+        ["Motor", auto.motor],
+        ["Transmisión", auto.transmision],
+      ];
+      for (const [etiqueta, valor] of filas) {
+        if (!valor) continue;
+        const dt = document.createElement("dt"); dt.textContent = etiqueta;
+        const dd = document.createElement("dd"); dd.textContent = valor;
+        $("#d-ficha").append(dt, dd);
+      }
+    }
+
+    async function cargar() {
+      if (!id) {
+        mostrarMensaje("No encontramos este vehículo", "El enlace no corresponde a ningún vehículo del catálogo. Vuelve al catálogo y elige uno de la lista.");
+        return;
+      }
+      try {
+        const resp = await fetch("/api/autos/" + encodeURIComponent(id));
+        if (resp.status === 404) {
+          mostrarMensaje("No encontramos este vehículo", "El enlace no corresponde a ningún vehículo del catálogo. Vuelve al catálogo y elige uno de la lista.");
+          return;
+        }
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        mostrarAuto(await resp.json());
+      } catch (e) {
+        mostrarMensaje("No se pudo cargar el vehículo", "No hay conexión con el servidor. Verifica que Spring Boot esté encendido.");
+      }
+    }
+    cargar();
+  </script>
+</body>
+</html>

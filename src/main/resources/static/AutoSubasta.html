@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo | AutoSubasta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header>
+  <a href="AutoSubasta.html" class="logo"><img src="img/AutoSubastaLOGO.jpg" alt="Prestige Motors"></a>
+  <nav>
+    <a href="registro.html">Servicios</a>
+    <a href="#">Test Drive</a>
+    <a href="index.html">Prestige Motors</a>
+    <a href="#" class="btn-asesor">Contactar asesor</a>
+  </nav>
+</header>
+
+  <section class="titulo">
+    <div>
+      <h1>Explora nuestro catálogo actual</h1>
+      <p id="contador"></p>
+    </div>
+    <div class="orden">
+      <label for="orden">Filtrar por:</label>
+      <select id="orden">
+        <option value="fecha_desc">Fecha: Recientes primero</option>
+        <option value="fecha_asc">Fecha: Antiguos primero</option>
+        <option value="precio_asc">Precio: Menor a mayor</option>
+        <option value="precio_desc">Precio: Mayor a menor</option>
+      </select>
+    </div>
+  </section>
+
+  <main class="contenido">
+
+    <form class="busqueda" id="form-busqueda" action="#" method="get">
+      <h2>Búsqueda</h2>
+
+      <input type="search" name="q" placeholder="Buscar vehículo" aria-label="Buscar vehículo especifico">
+
+      <label for="tipo">Tipo</label>
+      <input type="text" id="tipo" name="tipo" placeholder="Auto o Caminoneta">
+
+      <label for="marca">Marca</label>
+      <input type="text" id="marca" name="marca" placeholder="Ford Ranger Raptor">
+
+      <label for="modelo">Modelo</label>
+      <input type="text" id="modelo" name="modelo" placeholder="Ford Ranger Raptor">
+
+      <label for="anio">Año</label>
+      <input type="text" id="anio" name="anio" placeholder="20XX" inputmode="numeric">
+
+      <label>Rango de precios</label>
+      <div class="precios">
+        <div class="rango">
+          <input type="range" id="min" min="0" max="500000" value="0" aria-label="Precio mínimo">
+          <input type="range" id="max" min="0" max="500000" value="500000" aria-label="Precio máximo">
+        </div>
+        <div class="precios-num">
+          <input type="text" id="min-num" inputmode="numeric" aria-label="Precio mínimo en USD">
+          <input type="text" id="max-num" inputmode="numeric" aria-label="Precio máximo en USD">
+        </div>
+      </div>
+
+      <button class="btn btn-buscar" type="submit">Buscar</button>
+    </form>
+
+    <section class="lista" id="lista" aria-label="Vehículos disponibles" aria-live="polite">
+      <p class="estado-lista">Cargando vehículos…</p>
+    </section>
+  </main>
+
+    <footer>
+    <a href="#" class="volver">
+      <span aria-hidden="true">↑</span>
+      Volver arriba
+    </a>
+
+    <div class="footer-cols">
+      <div>
+        <h5>Postventa</h5>
+        <a href="registro.html">Auto Spa</a>
+        <a href="registro.html">Boutique</a>
+        <a href="registro.html">Accesorios</a>
+        <a href="registro.html">Garantía</a>
+        <a href="registro.html">Servicios mecánicos</a>
+      </div>
+      <div>
+        <h5>Marcas asociadas</h5>
+        <a href="https://www.porsche.com/international/">Porsche</a>
+        <a href="https://www.chevrolet.com.pe/">Chevrolet</a>
+        <a href="https://www.audi.com/en">Audi</a>
+        <a href="https://www.mercedes-benz.com.pe/">Mercedes-benz</a>
+        <a href="https://www.mclaren.com/">Mclaren</a>
+        <a href="https://www.mitsubishi-motors.com.pe/">Mitsubishi</a>
+      </div>
+      <div>
+        <h5>Trabaja con nosotros</h5>
+        <a href="#">Empleos</a>
+        <a href="#">Sostenibilidad</a>
+        <a href="#">Logros empresariales</a>
+      </div>
+    </div>
+
+    <p class="copy">© 2026 Prestige Motors Latin America, Inc.</p>
+
+    <div class="footer-base">
+      <div class="legales">
+        <a href="#">Políticas y privacidad</a>
+        <a href="#">Libro de reclamaciones</a>
+        <a href="#">Preferencias de Cookies</a>
+      </div>
+      <div class="redes">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.4H7.6V14h2.7v8z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mantiene sincronizados los deslizadores con las cajas de precio
+    const min = document.getElementById("min"), max = document.getElementById("max");
+    const minNum = document.getElementById("min-num"), maxNum = document.getElementById("max-num");
+    function sync(e) {
+      if (+min.value > +max.value) {
+        if (e && e.target === min) min.value = max.value; else max.value = min.value;
+      }
+      minNum.value = "$" + Number(min.value).toLocaleString("en-US");
+      maxNum.value = "$" + Number(max.value).toLocaleString("en-US");
+    }
+    min.addEventListener("input", sync);
+    max.addEventListener("input", sync);
+    sync();
+  </script>
+
+  <script>
+    // ---- Catálogo desde el backend: GET /api/autos ----
+    const lista = document.getElementById("lista");
+    const contador = document.getElementById("contador");
+    const formBusqueda = document.getElementById("form-busqueda");
+    const selectOrden = document.getElementById("orden");
+    const rangoMin = document.getElementById("min");
+    const rangoMax = document.getElementById("max");
+    const PRECIO_MIN_DEFECTO = 0, PRECIO_MAX_DEFECTO = 500000;
+
+    function mensaje(texto) {
+      const p = document.createElement("p");
+      p.className = "estado-lista";
+      p.textContent = texto;
+      return p;
+    }
+
+    function fila(texto) {
+      const p = document.createElement("p");
+      p.textContent = texto;
+      return p;
+    }
+
+    // Misma estructura que tenían las tarjetas escritas a mano
+    function crearTarjeta(auto) {
+      const art = document.createElement("article");
+      art.className = "auto";
+
+      const img = document.createElement("img");
+      img.src = auto.imagen;
+      img.alt = auto.nombre;
+      img.loading = "lazy";
+
+      const info = document.createElement("div");
+      info.className = "auto-info";
+      const h3 = document.createElement("h3");
+      h3.textContent = auto.nombre;
+      info.append(h3);
+      if (auto.kilometraje != null) info.append(fila("Kilometraje: " + auto.kilometraje.toLocaleString("en-US") + " km"));
+      if (auto.color) info.append(fila("Color: " + auto.color));
+      if (auto.anio) info.append(fila("Año de fabricación: " + auto.anio));
+      if (auto.motor) info.append(fila("Motor: " + auto.motor));
+      if (auto.transmision) info.append(fila("Transmisión: " + auto.transmision));
+
+      const enlace = document.createElement("a");
+      enlace.className = "btn-detalle";
+      enlace.href = "detalle.html?id=" + encodeURIComponent(auto.slug);
+      enlace.textContent = "Ver detalle";
+      info.append(enlace);
+
+      const precio = document.createElement("span");
+      precio.className = "precio";
+      precio.textContent = auto.precio != null ? "$" + Number(auto.precio).toLocaleString("en-US") + " USD" : "Consultar precio";
+
+      art.append(img, info, precio);
+      return art;
+    }
+
+    function construirQuery() {
+      const datos = new FormData(formBusqueda);
+      const params = new URLSearchParams();
+      for (const campo of ["q", "tipo", "marca", "modelo", "anio"]) {
+        const valor = (datos.get(campo) || "").trim();
+        if (!valor) continue;
+        if (campo === "anio" && !/^\d{4}$/.test(valor)) continue; // solo años de 4 dígitos
+        params.set(campo, valor);
+      }
+      // El rango de precios solo se envía si el usuario lo movió
+      if (+rangoMin.value > PRECIO_MIN_DEFECTO) params.set("min", rangoMin.value);
+      if (+rangoMax.value < PRECIO_MAX_DEFECTO) params.set("max", rangoMax.value);
+      params.set("orden", selectOrden.value);
+      return params.toString();
+    }
+
+    async function cargarAutos() {
+      lista.replaceChildren(mensaje("Cargando vehículos…"));
+      try {
+        const resp = await fetch("/api/autos?" + construirQuery());
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        const autos = await resp.json();
+        contador.textContent = autos.length + (autos.length === 1 ? " vehículo disponible" : " vehículos disponibles");
+        if (autos.length === 0) {
+          lista.replaceChildren(mensaje("No encontramos vehículos con esos filtros."));
+          return;
+        }
+        lista.replaceChildren(...autos.map(crearTarjeta));
+      } catch (e) {
+        contador.textContent = "";
+        lista.replaceChildren(mensaje("No se pudo cargar el catálogo. ¿Está encendido el servidor Spring Boot?"));
+      }
+    }
+
+    formBusqueda.addEventListener("submit", e => { e.preventDefault(); cargarAutos(); });
+    selectOrden.addEventListener("change", cargarAutos);
+    cargarAutos();
+  </script>
+</body>
+</html>
