@@ -1,4 +1,4 @@
-<package pe.prestigemotors.model;
+package pe.prestigemotors.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
